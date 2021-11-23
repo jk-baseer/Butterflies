@@ -9,7 +9,7 @@ export const getServerSideProps = async (ctx) => {
   const response = await tradly.app.getListings({
     bodyParam: { page: 1 },
   });
-  const total_records = await response.data.total_records;
+   const total_records = await response?.data?.total_records;
 
   const totalPages = Math.ceil(total_records / 10);
 
@@ -23,7 +23,7 @@ export const getServerSideProps = async (ctx) => {
   for (let index = 0; index < totalPages; index++) {
 
     const response = await tradly.app.getListings({
-      bodyParam: { page: index + 1, per_page: 10 },
+      bodyParam: { page: index + 1, per_page: 90 },
     });
 
     const listings = await response.data.listings;

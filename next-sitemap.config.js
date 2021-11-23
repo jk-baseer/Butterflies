@@ -41,6 +41,8 @@ module.exports = {
     '/checkout',
     '/payout',
     '/stores',
+    '/listing-sitemap.xml',
+    '/category-sitemap.xml',
   ],
   robotsTxtOptions: {
     additionalSitemaps: [
